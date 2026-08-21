@@ -1,30 +1,41 @@
-# 🎨 Visual Kit
+# Design Conventions
 
-A cohesive **color palette** and **design token system** for consistent branding across all projects. Built with modern standards and framework-agnostic.
+Ein zentrales Repository für Design- und Branding-Standards. Hier werden alle Farben, Komponenten-Richtlinien und Designprinzipien definiert, um Konsistenz über alle Projekte hinweg zu gewährleisten.
 
-## 📦 What's Included
+## Zweck
 
-- **JSON Format** - Easy integration with any tech stack
-- **CSS Variables** - Drop-in usage in web projects
-- **Tailwind Config** - TypeScript-ready configuration
-- **Design Tokens** - Figma-compatible format
-- **Full Documentation** - Usage guides and best practices
+Dieses Repository dient als Single Source of Truth für alle Design-Ressourcen:
 
-## 🎯 Color System
+- Farbpaletten und Design Tokens
+- CSS-Variablen für konsistentes Styling
+- Tailwind-Konfigurationen
+- Designrichtlinien und Best Practices
+- Barrierefreiheits-Standards
 
-| Color | Hex | Purpose |
-|-------|-----|---------|
-| Light Beige | `#f5f0e6` | Primary background |
-| Dark Beige | `#e0d3b7` | Secondary elements |
-| Dark Brown | `#3c3830` | Primary text |
-| **Green** | `#009175` | Main accent, CTAs |
-| **Orange** | `#fd8d58` | Secondary accent, highlights |
+So ist sichergestellt, dass alle Projekte optisch konsistent sind und eine einheitliche Markenidentität widerspiegeln.
 
-## 🚀 Quick Start
+## Farbschema
 
-### Option 1: CSS Import
+| Farbe | Hex | Zweck |
+|-------|-----|-------|
+| Light Beige | #f5f0e6 | Primärer Hintergrund |
+| Dark Beige | #e0d3b7 | Sekundäre Elemente |
+| Dark Brown | #3c3830 | Primärer Text |
+| Green | #009175 | Hauptakzent, Call-to-Action |
+| Orange | #fd8d58 | Sekundärer Akzent, Highlights |
+
+## Dateien
+
+- **color-palette.json** - Farbdefinitionen in maschinenlesbarem Format (Hex, RGB, HSL)
+- **color-palette.css** - CSS-Variablen zum direkten Import
+- **tailwind-colors.config.ts** - Tailwind CSS Konfiguration mit Farbpalette
+- **COLOR_PALETTE.md** - Ausführliche Dokumentation
+
+## Integration in Projekte
+
+### CSS Import
 ```css
-@import 'https://raw.githubusercontent.com/damblatt/visual-kit/main/color-palette.css';
+@import 'https://raw.githubusercontent.com/damblatt/design-conventions/main/color-palette.css';
 
 body {
   background-color: var(--color-primary-light-beige);
@@ -32,48 +43,31 @@ body {
 }
 ```
 
-### Option 2: JSON for JavaScript/TypeScript
+### JSON für JavaScript/TypeScript
 ```typescript
-import colors from 'https://raw.githubusercontent.com/damblatt/visual-kit/main/color-palette.json';
-
-const primaryGreen = colors.colors.primary.green.hex; // #009175
+import colors from 'https://raw.githubusercontent.com/damblatt/design-conventions/main/color-palette.json';
+const primaryGreen = colors.colors.primary.green.hex;
 ```
 
-### Option 3: Tailwind Integration
+### Tailwind Integration
 ```typescript
-import { butterkeksColors } from './tailwind-colors.config';
+import { visualKitColors } from './tailwind-colors.config';
 
 export default {
   theme: {
     extend: {
-      colors: butterkeksColors,
+      colors: visualKitColors,
     },
   },
 };
 ```
 
-## 📁 File Structure
-
-```
-visual-kit/
-├── color-palette.json           # Complete color definitions
-├── color-palette.css            # CSS variables (ready to use)
-├── tailwind-colors.config.ts    # Tailwind configuration
-├── COLOR_PALETTE.md             # Detailed documentation
-├── README.md                    # This file
-└── package.json                 # npm metadata
+### Lokal kopieren
+```bash
+curl -O https://raw.githubusercontent.com/damblatt/design-conventions/main/color-palette.css
 ```
 
-## 📖 Documentation
-
-See [COLOR_PALETTE.md](./COLOR_PALETTE.md) for:
-- Detailed color specifications
-- Usage examples for different frameworks
-- Accessibility considerations
-- Color combination guidelines
-- Design token principles
-
-## 💻 Framework Integration
+## Verwendung nach Framework
 
 ### Angular
 ```typescript
@@ -96,25 +90,13 @@ const colors = require('./color-palette.json');
 ### Vanilla CSS
 ```css
 @import './color-palette.css';
-/* Use var(--color-primary-green) etc. */
+background-color: var(--color-primary-green);
 ```
 
-## 🔄 Version History
+## Best Practices
 
-- **1.0.0** (2026-08-21) - Initial release
-  - 5 core colors with variations
-  - CSS, JSON, and Tailwind formats
-  - Complete documentation
-
-## 📝 License
-
-MIT
-
-## 🤝 Contributing
-
-Suggestions for color improvements? Open an issue or PR!
-
----
-
-**Part of:** Butterkeks Portfolio Project  
-**Maintained by:** [@damblatt](https://github.com/damblatt)
+- Verwende immer die definierten Farben statt Custom-Farben zu erstellen
+- Nutze CSS-Variablen oder Tailwind-Klassen für Konsistenz
+- Teste Farbkombinationen auf Barrierefreiheit (Kontrastverhältnisse)
+- Für Orange nur bei Highlights verwenden, nicht für Body-Text
+- Bei Änderungen alle Dateien gleichzeitig aktualisieren
