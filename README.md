@@ -23,6 +23,16 @@ npm run build
 npm run check
 ```
 
+### Push-Schutz
+
+Das Repository enthält einen versionierten `pre-push`-Hook. Einmal pro lokalem Clone aktivieren:
+
+```bash
+git config core.hooksPath .githooks
+```
+
+Vor jedem `git push` führt der Hook `npm run check` aus. Commits bleiben jederzeit möglich; ein Push mit veralteten generierten Dateien wird abgebrochen. Zusätzlich führt GitHub Actions dieselbe Prüfung bei Pull Requests und Pushes auf `main` aus.
+
 ## CSS
 
 Alle aktuellen Token-Kategorien:

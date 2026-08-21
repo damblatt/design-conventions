@@ -1,0 +1,12 @@
+#!/bin/sh
+
+echo "Checking generated design tokens before push..."
+
+if npm run check; then
+  exit 0
+fi
+
+echo >&2
+echo "Push aborted: generated design-token files are outdated." >&2
+echo "Run 'npm run build', commit the generated files, and push again." >&2
+exit 1
