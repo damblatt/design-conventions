@@ -1,0 +1,96 @@
+/**
+ * Visual Kit - Color Palette
+ * 
+ * A cohesive color system for consistent branding across projects.
+ * Copy this file to other projects and import it in your styles.
+ * 
+ * Usage:
+ * @import "./color-palette.css";
+ * 
+ * Then use the CSS variables:
+ * background-color: var(--color-primary-light-beige);
+ * color: var(--color-primary-dark-brown);
+ */
+
+:root {
+  /* Light Beige - Primary background color */
+  --color-primary-light-beige: #f5f0e6;
+  --rgb-primary-light-beige: 245, 240, 230;
+
+  /* Dark Beige - Secondary background, accents */
+  --color-primary-dark-beige: #e0d3b7;
+  --rgb-primary-dark-beige: 224, 211, 183;
+
+  /* Dark Brown - Primary text color */
+  --color-primary-dark-brown: #3c3830;
+  --rgb-primary-dark-brown: 60, 56, 48;
+
+  /* Dark Brown with 80% opacity */
+  --color-primary-dark-brown-80: rgba(69, 64, 56, 0.80);
+  --rgb-primary-dark-brown-80: 69, 64, 56;
+  --alpha-primary-dark-brown-80: 0.80;
+
+  /* Green - Primary accent, CTAs */
+  --color-primary-green: #009175;
+  --rgb-primary-green: 0, 145, 117;
+
+  /* Green with 80% opacity */
+  --color-primary-green-80: rgba(0, 145, 117, 0.8);
+  --rgb-primary-green-80: 0, 145, 117;
+  --alpha-primary-green-80: 0.8;
+
+  /* Orange - Secondary accent, highlights */
+  --color-primary-orange: #fd8d58;
+  --rgb-primary-orange: 253, 141, 88;
+
+  /* Semantic color aliases */
+  --color-text-primary: var(--color-primary-dark-brown);
+  --color-text-secondary: rgba(var(--rgb-primary-dark-brown), 0.7);
+  --color-bg-primary: var(--color-primary-light-beige);
+  --color-bg-secondary: var(--color-primary-dark-beige);
+  --color-accent-primary: var(--color-primary-green);
+  --color-accent-secondary: var(--color-primary-orange);
+}
+
+/* Optional: Reset defaults using the palette */
+body {
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+}
+
+/* Utility classes for quick usage */
+.text-primary {
+  color: var(--color-primary-dark-brown);
+}
+
+.text-secondary {
+  color: rgba(var(--rgb-primary-dark-brown), 0.7);
+}
+
+.bg-primary {
+  background-color: var(--color-primary-light-beige);
+}
+
+.bg-secondary {
+  background-color: var(--color-primary-dark-beige);
+}
+
+.bg-accent-green {
+  background-color: var(--color-primary-green);
+}
+
+.bg-accent-orange {
+  background-color: var(--color-primary-orange);
+}
+
+.border-primary {
+  border-color: var(--color-primary-dark-brown);
+}
+
+.border-accent-green {
+  border-color: var(--color-primary-green);
+}
+
+.border-accent-orange {
+  border-color: var(--color-primary-orange);
+}

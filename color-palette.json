@@ -1,0 +1,112 @@
+{
+  "projectName": "Butterkeks Portfolio",
+  "description": "Color palette for consistent branding across projects",
+  "exportedDate": "2026-08-21",
+  "colors": {
+    "primary": {
+      "light-beige": {
+        "hex": "#f5f0e6",
+        "rgb": "245, 240, 230",
+        "hsl": "38, 60%, 93%",
+        "usage": "Background, light surfaces",
+        "name": "Light Beige"
+      },
+      "dark-beige": {
+        "hex": "#e0d3b7",
+        "rgb": "224, 211, 183",
+        "hsl": "38, 47%, 80%",
+        "usage": "Accents, secondary backgrounds",
+        "name": "Dark Beige"
+      },
+      "dark-brown": {
+        "hex": "#3c3830",
+        "rgb": "60, 56, 48",
+        "hsl": "38, 11%, 21%",
+        "usage": "Primary text, dark elements",
+        "name": "Dark Brown"
+      },
+      "dark-brown-80": {
+        "hex": "#454038",
+        "rgb": "69, 64, 56",
+        "rgba": "69, 64, 56, 0.8",
+        "usage": "Overlays, semi-transparent backgrounds",
+        "name": "Dark Brown 80%"
+      },
+      "green": {
+        "hex": "#009175",
+        "rgb": "0, 145, 117",
+        "hsl": "168, 100%, 28%",
+        "usage": "Primary accent, CTAs, interactive elements",
+        "name": "Green"
+      },
+      "green-80": {
+        "hex": "#009175",
+        "rgb": "0, 145, 117",
+        "rgba": "0, 145, 117, 0.8",
+        "usage": "Hover states, interactive overlays",
+        "name": "Green 80%"
+      },
+      "orange": {
+        "hex": "#fd8d58",
+        "rgb": "253, 141, 88",
+        "hsl": "16, 99%, 67%",
+        "usage": "Highlights, secondary accent, warnings",
+        "name": "Orange"
+      }
+    }
+  },
+  "cssVariables": {
+    "--color-primary-light-beige": "#f5f0e6",
+    "--color-primary-dark-beige": "#e0d3b7",
+    "--color-primary-dark-brown": "#3c3830",
+    "--color-primary-dark-brown-80": "rgba(69, 64, 56, 0.80)",
+    "--color-primary-green": "#009175",
+    "--color-primary-green-80": "rgba(0, 145, 117, 0.8)",
+    "--color-primary-orange": "#fd8d58"
+  },
+  "tailwindConfig": {
+    "extend": {
+      "colors": {
+        "primary": {
+          "light-beige": "#f5f0e6",
+          "dark-beige": "#e0d3b7",
+          "dark-brown": "#3c3830",
+          "dark-brown-80": "rgba(69, 64, 56, 0.80)",
+          "green": "#009175",
+          "green-80": "rgba(0, 145, 117, 0.8)",
+          "orange": "#fd8d58"
+        }
+      }
+    }
+  },
+  "figmaTokens": {
+    "Light Beige": {
+      "type": "color",
+      "value": "#f5f0e6"
+    },
+    "Dark Beige": {
+      "type": "color",
+      "value": "#e0d3b7"
+    },
+    "Dark Brown": {
+      "type": "color",
+      "value": "#3c3830"
+    },
+    "Dark Brown 80": {
+      "type": "color",
+      "value": "{rgba(69, 64, 56, 0.80)}"
+    },
+    "Green": {
+      "type": "color",
+      "value": "#009175"
+    },
+    "Green 80": {
+      "type": "color",
+      "value": "rgba(0, 145, 117, 0.8)"
+    },
+    "Orange": {
+      "type": "color",
+      "value": "#fd8d58"
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "name": "@damblatt/visual-kit",
+  "version": "1.0.0",
+  "description": "A cohesive color palette and design token system for consistent branding across projects",
+  "main": "color-palette.json",
+  "exports": {
+    ".": "./color-palette.json",
+    "./colors": "./color-palette.json",
+    "./css": "./color-palette.css",
+    "./tailwind": "./tailwind-colors.config.ts"
+  },
+  "keywords": [
+    "color-palette",
+    "design-tokens",
+    "css-variables",
+    "tailwind",
+    "angular",
+    "branding",
+    "design-system"
+  ],
+  "author": "damblatt",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/damblatt/visual-kit.git"
+  },
+  "homepage": "https://github.com/damblatt/visual-kit#readme",
+  "bugs": {
+    "url": "https://github.com/damblatt/visual-kit/issues"
+  }
+}
