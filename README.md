@@ -1,102 +1,67 @@
 # Design Conventions
 
-Ein zentrales Repository für Design- und Branding-Standards. Hier werden alle Farben, Komponenten-Richtlinien und Designprinzipien definiert, um Konsistenz über alle Projekte hinweg zu gewährleisten.
+Zentrale, erweiterbare Design-Tokens und Richtlinien für projektübergreifend konsistente Oberflächen.
 
-## Zweck
+## Struktur
 
-Dieses Repository dient als Single Source of Truth für alle Design-Ressourcen:
+```text
+tokens/        Maschinenlesbare Source of Truth
+css/           Generierte CSS Custom Properties
+integrations/  Generierte Framework-Adapter
+docs/          Richtlinien und Anwendungsbeispiele
+scripts/       Generierung und Konsistenzprüfung
+```
 
-- Farbpaletten und Design Tokens
-- CSS-Variablen für konsistentes Styling
-- Tailwind-Konfigurationen
-- Designrichtlinien und Best Practices
-- Barrierefreiheits-Standards
+Farben und Borders sind die ersten Token-Kategorien. Weitere Kategorien wie Spacing, Typografie, Schatten, Motion oder Breakpoints können jeweils als eigene Datei in diesen Schichten ergänzt werden.
 
-So ist sichergestellt, dass alle Projekte optisch konsistent sind und eine einheitliche Markenidentität widerspiegeln.
+## Entwicklung
 
-## Farbschema
+Tokenwerte werden ausschließlich in `tokens/*.json` geändert. Anschließend werden die abgeleiteten Dateien erzeugt und geprüft:
 
-| Farbe | Hex | Zweck |
-|-------|-----|-------|
-| Light Beige | #f5f0e6 | Primärer Hintergrund |
-| Dark Beige | #e0d3b7 | Sekundäre Elemente |
-| Dark Brown | #3c3830 | Primärer Text |
-| Green | #009175 | Hauptakzent, Call-to-Action |
-| Orange | #fd8d58 | Sekundärer Akzent, Highlights |
+```bash
+npm run build
+npm run check
+```
 
-## Dateien
+## CSS
 
-- **color-palette.json** - Farbdefinitionen in maschinenlesbarem Format (Hex, RGB, HSL)
-- **color-palette.css** - CSS-Variablen zum direkten Import
-- **tailwind-colors.config.ts** - Tailwind CSS Konfiguration mit Farbpalette
-- **COLOR_PALETTE.md** - Ausführliche Dokumentation
+Alle aktuellen Token-Kategorien:
 
-## Integration in Projekte
-
-### CSS Import
 ```css
-@import 'https://raw.githubusercontent.com/damblatt/design-conventions/main/color-palette.css';
-
-body {
-  background-color: var(--color-primary-light-beige);
-  color: var(--color-primary-dark-brown);
-}
+@import '@damblatt/visual-kit/css/all';
 ```
 
-### JSON für JavaScript/TypeScript
-```typescript
-import colors from 'https://raw.githubusercontent.com/damblatt/design-conventions/main/color-palette.json';
-const primaryGreen = colors.colors.primary.green.hex;
+Einzelne Kategorien:
+
+```css
+@import '@damblatt/visual-kit/css/colors';
+@import '@damblatt/visual-kit/css/borders';
 ```
 
-### Tailwind Integration
+## Tailwind
+
 ```typescript
-import { visualKitColors } from './tailwind-colors.config';
+import {
+  designConventionBorders,
+  designConventionColors,
+} from '@damblatt/visual-kit/integrations/tailwind';
 
 export default {
   theme: {
     extend: {
-      colors: visualKitColors,
+      colors: designConventionColors,
+      borderRadius: designConventionBorders.borderRadius,
+      borderWidth: designConventionBorders.borderWidth,
     },
   },
 };
 ```
 
-### Lokal kopieren
-```bash
-curl -O https://raw.githubusercontent.com/damblatt/design-conventions/main/color-palette.css
-```
+## Dokumentation
 
-## Verwendung nach Framework
+- [Farbsystem](docs/colors.md)
+- [Border-System](docs/borders.md)
 
-### Angular
-```typescript
-import colors from './color-palette.json';
-export const APP_COLORS = colors.colors.primary;
-```
+## Kompatibilität
 
-### React
-```javascript
-const colors = {
-  primary: { green: '#009175', orange: '#fd8d58' }
-};
-```
-
-### Vue
-```javascript
-const colors = require('./color-palette.json');
-```
-
-### Vanilla CSS
-```css
-@import './color-palette.css';
-background-color: var(--color-primary-green);
-```
-
-## Best Practices
-
-- Verwende immer die definierten Farben statt Custom-Farben zu erstellen
-- Nutze CSS-Variablen oder Tailwind-Klassen für Konsistenz
-- Teste Farbkombinationen auf Barrierefreiheit (Kontrastverhältnisse)
-- Für Orange nur bei Highlights verwenden, nicht für Body-Text
-- Bei Änderungen alle Dateien gleichzeitig aktualisieren
+Die bisherigen Einstiegspunkte `color-palette.css`, `color-palette.json` und `tailwind-colors.config.ts` bleiben vorerst erhalten. Neue Integrationen sollten die fachlich getrennten Pfade verwenden.

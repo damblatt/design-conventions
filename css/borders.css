@@ -1,0 +1,19 @@
+/* Generated from tokens/borders.json. Do not edit directly. */
+:root {
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 10px;
+  --radius-full: 50%;
+
+  --border-width-thin: 1px;
+  --border-width-medium: 1.5px;
+  --border-width-thick: 3px;
+
+  --radius-control: 6px;
+  --radius-surface: 8px;
+  --radius-container: 10px;
+  --radius-round: 50%;
+  --border-width-default: 1px;
+  --border-width-emphasis: 1.5px;
+  --border-width-accent: 3px;
+}

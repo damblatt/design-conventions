@@ -1,17 +1,29 @@
 {
   "name": "@damblatt/visual-kit",
   "version": "1.0.0",
-  "description": "A cohesive color palette and design token system for consistent branding across projects",
+  "description": "Extensible design tokens and conventions for consistent branding across projects",
   "main": "color-palette.json",
+  "scripts": {
+    "build": "node scripts/build-tokens.js",
+    "check": "node scripts/build-tokens.js --check"
+  },
   "exports": {
     ".": "./color-palette.json",
     "./colors": "./color-palette.json",
     "./css": "./color-palette.css",
-    "./tailwind": "./tailwind-colors.config.ts"
+    "./tailwind": "./tailwind-colors.config.ts",
+    "./tokens/colors": "./tokens/colors.json",
+    "./tokens/borders": "./tokens/borders.json",
+    "./css/colors": "./css/colors.css",
+    "./css/borders": "./css/borders.css",
+    "./css/all": "./css/index.css",
+    "./integrations/tailwind": "./integrations/tailwind.ts"
   },
   "keywords": [
-    "color-palette",
+    "design-conventions",
     "design-tokens",
+    "color-palette",
+    "border-tokens",
     "css-variables",
     "tailwind",
     "angular",

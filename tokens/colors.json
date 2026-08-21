@@ -1,0 +1,105 @@
+{
+  "$description": "Color primitives, semantic aliases and framework scales",
+  "primitive": {
+    "lightBeige": {
+      "value": "#f5f0e6",
+      "rgb": "245, 240, 230",
+      "hsl": "38, 60%, 93%",
+      "usage": "Background and light surfaces"
+    },
+    "darkBeige": {
+      "value": "#e0d3b7",
+      "rgb": "224, 211, 183",
+      "hsl": "38, 47%, 80%",
+      "usage": "Accents and secondary backgrounds"
+    },
+    "darkBrown": {
+      "value": "#3c3830",
+      "rgb": "60, 56, 48",
+      "hsl": "38, 11%, 21%",
+      "usage": "Primary text and dark elements"
+    },
+    "darkBrown80": {
+      "value": "rgba(69, 64, 56, 0.8)",
+      "hex": "#454038",
+      "rgb": "69, 64, 56",
+      "usage": "Overlays and semi-transparent backgrounds"
+    },
+    "green": {
+      "value": "#009175",
+      "rgb": "0, 145, 117",
+      "hsl": "168, 100%, 28%",
+      "usage": "Primary actions and interactive elements"
+    },
+    "green80": {
+      "value": "rgba(0, 145, 117, 0.8)",
+      "hex": "#009175",
+      "rgb": "0, 145, 117",
+      "usage": "Hover states and interactive overlays"
+    },
+    "orange": {
+      "value": "#fd8d58",
+      "rgb": "253, 141, 88",
+      "hsl": "16, 99%, 67%",
+      "usage": "Highlights and warnings"
+    }
+  },
+  "semantic": {
+    "textPrimary": "{primitive.darkBrown}",
+    "textSecondary": "rgba(60, 56, 48, 0.7)",
+    "backgroundPrimary": "{primitive.lightBeige}",
+    "backgroundSecondary": "{primitive.darkBeige}",
+    "accentPrimary": "{primitive.green}",
+    "accentSecondary": "{primitive.orange}"
+  },
+  "scale": {
+    "beige": {
+      "50": "#faf8f4",
+      "100": "#f5f0e6",
+      "200": "#efe7d5",
+      "300": "#e8dcc3",
+      "400": "#e0d3b7",
+      "500": "#d4c4a8",
+      "600": "#b8a883",
+      "700": "#9d8d5e",
+      "800": "#6b6342",
+      "900": "#3c3830"
+    },
+    "green": {
+      "50": "#e8f7f4",
+      "100": "#d1efe8",
+      "200": "#a3dfd1",
+      "300": "#75cfba",
+      "400": "#47bfa3",
+      "500": "#1aaf8c",
+      "600": "#009175",
+      "700": "#007a62",
+      "800": "#005c4a",
+      "900": "#003d32"
+    },
+    "orange": {
+      "50": "#fff9f5",
+      "100": "#fef3eb",
+      "200": "#fdd9c1",
+      "300": "#fcbf97",
+      "400": "#fba56d",
+      "500": "#fd8d58",
+      "600": "#f87040",
+      "700": "#d9532f",
+      "800": "#b03820",
+      "900": "#882d1a"
+    },
+    "neutral": {
+      "50": "#f9f8f6",
+      "100": "#f5f0e6",
+      "200": "#e8dcc3",
+      "300": "#d4c4a8",
+      "400": "#b8a883",
+      "500": "#9d8d5e",
+      "600": "#6b6342",
+      "700": "#3c3830",
+      "800": "#2a2623",
+      "900": "#1a1815"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+/* Generated from tokens/colors.json. Do not edit directly. */
+:root {
+  --color-light-beige: #f5f0e6;
+  --rgb-light-beige: 245, 240, 230;
+  --color-dark-beige: #e0d3b7;
+  --rgb-dark-beige: 224, 211, 183;
+  --color-dark-brown: #3c3830;
+  --rgb-dark-brown: 60, 56, 48;
+  --color-dark-brown-80: rgba(69, 64, 56, 0.8);
+  --rgb-dark-brown-80: 69, 64, 56;
+  --color-green: #009175;
+  --rgb-green: 0, 145, 117;
+  --color-green-80: rgba(0, 145, 117, 0.8);
+  --rgb-green-80: 0, 145, 117;
+  --color-orange: #fd8d58;
+  --rgb-orange: 253, 141, 88;
+
+  --color-primary-light-beige: var(--color-light-beige);
+  --color-primary-dark-beige: var(--color-dark-beige);
+  --color-primary-dark-brown: var(--color-dark-brown);
+  --color-primary-dark-brown-80: var(--color-dark-brown-80);
+  --color-primary-green: var(--color-green);
+  --color-primary-green-80: var(--color-green-80);
+  --color-primary-orange: var(--color-orange);
+
+  --color-text-primary: #3c3830;
+  --color-text-secondary: rgba(60, 56, 48, 0.7);
+  --color-bg-primary: #f5f0e6;
+  --color-bg-secondary: #e0d3b7;
+  --color-accent-primary: #009175;
+  --color-accent-secondary: #fd8d58;
+}

@@ -1,0 +1,29 @@
+{
+  "$description": "Border primitives and semantic component aliases",
+  "primitive": {
+    "radius": {
+      "sm": "6px",
+      "md": "8px",
+      "lg": "10px",
+      "full": "50%"
+    },
+    "width": {
+      "thin": "1px",
+      "medium": "1.5px",
+      "thick": "3px"
+    }
+  },
+  "semantic": {
+    "radius": {
+      "control": "{primitive.radius.sm}",
+      "surface": "{primitive.radius.md}",
+      "container": "{primitive.radius.lg}",
+      "round": "{primitive.radius.full}"
+    },
+    "width": {
+      "default": "{primitive.width.thin}",
+      "emphasis": "{primitive.width.medium}",
+      "accent": "{primitive.width.thick}"
+    }
+  }
+}
